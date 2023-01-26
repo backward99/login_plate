@@ -21,10 +21,12 @@ mongoose.connect(config.mongoURI).then(() => {
   console.log('mongoDB connected..');
 });
 
-app.get('/', (req, res) => {
-  res.send('바뀌어라 야;;');
+app.get('/api/hello', (req, res) => {
+  res.send('/api/hello페이지');
 });
-
+app.get('/', (req, res) => {
+  res.send('/페이지');
+});
 //회원가입 - 이메일 중복 안되게 설정함, 검토해서 비밀번호 암호화
 app.post('/register', (req, res) => {
   //몽구스로 만든 모델 불러오기
